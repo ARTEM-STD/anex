@@ -1,0 +1,1082 @@
+/* ==========================================================================
+   БАЗОВЫЕ СТИЛИ И СБРОС
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   ЦВЕТОВАЯ ПАЛИТРА ANEX TOUR
+   ========================================================================== */
+:root {
+    --anex-blue: #0056a6;
+    --anex-light-blue: #0077cc;
+    --anex-dark-blue: #003d7a;
+    --anex-red: #e60000;
+    --anex-orange: #ff6600;
+    --white: #ffffff;
+    --gray-light: #f5f7fa;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+}
+
+/* ==========================================================================
+   ШАПКА САЙТА
+   ========================================================================== */
+.site-header {
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0, 86, 166, 0.1);
+}
+
+.header-top {
+    background: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 86, 166, 0.1);
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text h1 {
+    font-size: 1.8rem;
+    color: var(--anex-blue);
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.logo-text h1 a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.city-label {
+    background: var(--anex-red);
+    color: var(--white);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tagline {
+    color: var(--anex-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.header-contacts {
+    text-align: right;
+}
+
+.phone-number a {
+    color: var(--anex-blue);
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-number a:hover {
+    color: var(--anex-red);
+}
+
+.work-hours {
+    color: var(--gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   ОСНОВНАЯ НАВИГАЦИЯ
+   ========================================================================== */
+.main-nav {
+    background: linear-gradient(135deg, var(--anex-blue), var(--anex-dark-blue));
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    min-height: 60px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-menu a.active {
+    background: var(--anex-red);
+    color: var(--white);
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   КНОПКИ
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--anex-blue), var(--anex-light-blue));
+    color: var(--white);
+    border: 2px solid var(--anex-blue);
+    box-shadow: 0 4px 15px rgba(0, 86, 166, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--anex-light-blue), var(--anex-blue));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 86, 166, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--anex-blue);
+    color: var(--anex-blue);
+}
+
+.btn-outline:hover {
+    background: var(--anex-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--anex-red), #ff3333);
+    color: var(--white);
+    border: 2px solid var(--anex-red);
+    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #ff3333, var(--anex-red));
+    transform: translateY(-2px);
+}
+
+.btn-lg {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   ГЕРОЙ-СЕКЦИЯ
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(rgba(0, 86, 166, 0.9), rgba(0, 61, 122, 0.9)), 
+                url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 100px 0;
+    margin-bottom: 60px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--anex-blue);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   ФОРМЫ
+   ========================================================================== */
+.form-control {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e6ef;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: var(--white);
+    font-family: inherit;
+    color: var(--gray-dark);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--anex-blue);
+    box-shadow: 0 0 0 4px rgba(0, 86, 166, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230056a6' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    padding-right: 40px;
+}
+
+/* ==========================================================================
+   ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    padding: 60px 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-header h1 {
+    color: var(--anex-blue);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.page-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--anex-red);
+    border-radius: 2px;
+}
+
+.page-header p {
+    color: var(--gray);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 25px auto 0;
+    line-height: 1.6;
+}
+
+/* Контейнер для форм */
+.booking-form-container,
+.login-container {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 86, 166, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 86, 166, 0.1);
+}
+
+.login-container {
+    max-width: 500px;
+    margin: 60px auto;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-header h1 {
+    color: var(--anex-blue);
+    margin-bottom: 15px;
+}
+
+/* Сообщения */
+.error {
+    background: #fee;
+    border: 2px solid var(--anex-red);
+    color: var(--anex-red);
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.success {
+    background: #d4edda;
+    border: 2px solid var(--success);
+    color: #155724;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   СЕТКА ТУРОВ
+   ========================================================================== */
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tour-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 86, 166, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 86, 166, 0.1);
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 86, 166, 0.15);
+}
+
+.tour-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, var(--anex-red), #ff3333);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.tour-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.tour-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.tour-card:hover .tour-image img {
+    transform: scale(1.1);
+}
+
+.tour-info {
+    padding: 25px;
+}
+
+.tour-title {
+    font-size: 1.3rem;
+    color: var(--anex-blue);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tour-hotel {
+    color: var(--anex-light-blue);
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.tour-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.tour-details span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--gray-light);
+    border-radius: 20px;
+}
+
+.tour-price {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 86, 166, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.price-new {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--anex-red);
+}
+
+/* ==========================================================================
+   КАК ЭТО РАБОТАЕТ
+   ========================================================================== */
+.how-it-works-section {
+    padding: 80px 0;
+    background: #f5f9ff;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 40px 25px;
+    background: var(--white);
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 86, 166, 0.08);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 86, 166, 0.15);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--anex-red), #ff3333);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--anex-blue), var(--anex-light-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: var(--white);
+    font-size: 32px;
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    color: var(--anex-blue);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.step-card p {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   ФУТЕР
+   ========================================================================== */
+.site-footer {
+    background: linear-gradient(135deg, var(--anex-dark-blue), var(--anex-blue));
+    color: var(--white);
+    margin-top: auto;
+}
+
+.footer-top {
+    padding: 60px 0;
+}
+
+.footer-top .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: var(--white);
+    font-weight: 700;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--anex-red);
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 12px;
+}
+
+.footer-menu a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: var(--white);
+    padding-left: 10px;
+}
+
+address p {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 14px;
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   УТИЛИТЫ
+   ========================================================================== */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--anex-blue);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.no-tours {
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--white);
+    border-radius: 15px;
+    color: var(--gray);
+    font-size: 1.1rem;
+    border: 2px dashed rgba(0, 86, 166, 0.2);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* ==========================================================================
+   АДМИН-СТИЛИ
+   ========================================================================== */
+.admin-header {
+    background: linear-gradient(135deg, var(--anex-dark-blue), var(--anex-blue));
+    color: var(--white);
+    padding: 15px 0;
+}
+
+.admin-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin-header h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-nav {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav .container {
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    overflow-x: auto;
+}
+
+.admin-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.admin-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.admin-nav a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    border-bottom: 3px solid var(--anex-red);
+}
+
+/* Таблицы в админке */
+.table-container {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 86, 166, 0.1);
+    margin-top: 30px;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th {
+    background: linear-gradient(135deg, var(--anex-blue), var(--anex-light-blue));
+    color: var(--white);
+    padding: 18px 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.table-container td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 86, 166, 0.1);
+    color: var(--gray-dark);
+}
+
+.table-container tr:hover {
+    background: rgba(0, 86, 166, 0.03);
+}
+
+/* Сообщения */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 18px 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--success);
+    font-weight: 500;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 18px 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--danger);
+    font-weight: 500;
+}
+
+/* Карточки статистики */
+.stat-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 86, 166, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 86, 166, 0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 86, 166, 0.15);
+}
+
+.stat-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--anex-blue);
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 10px 0;
+    color: var(--anex-blue);
+}
+
+.stat-label {
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   МЕДИА-ЗАПРОСЫ
+   ========================================================================== */
+@media (max-width: 992px) {
+    .nav-menu a {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .tours-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .search-form {
+        padding: 25px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .footer-top .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .booking-form-container,
+    .login-container {
+        padding: 25px;
+    }
+    
+    .table-container {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tours-grid,
+    .advantages-grid,
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .booking-form-container,
+    .login-container {
+        padding: 20px;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .step-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .table-container th,
+    .table-container td {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+}
+/* Стили для логотипа */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-svg {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    color: var(--anex-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+
+.logo-sub {
+    color: var(--anex-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+    line-height: 1;
+    margin: 3px 0 0 0;
+}
+
+.logo-city {
+    background: var(--anex-red);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .logo-svg {
+        height: 40px;
+    }
+    
+    .logo-main {
+        font-size: 1.5rem;
+    }
+}
